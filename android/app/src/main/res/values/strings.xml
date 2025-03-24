@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">WiiMotionPlus</string>
+    <string name="title_activity_main">WiiMotionPlus</string>
+    <string name="package_name">com.WiiMotionPlus.app</string>
+    <string name="custom_url_scheme">com.WiiMotionPlus.app</string>
+</resources>

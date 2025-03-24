@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="wii-container">
+    <div class="wii-header">
+      <h1>WiiMotionPlus</h1>
+    </div>
+
+    <div class="wii-content">
+      <div *ngIf="!isSynchronized && !isSynchronizing" class="sync-container">
+        <button class="sync-button" (click)="startSync()">Sincronizar</button>
+      </div>
+
+      <div *ngIf="isSynchronizing" class="loading-container">
+        <div class="loading-bar">
+          <div class="loading-progress" [style.width.%]="syncProgress"></div>
+        </div>
+        <p class="loading-text">Sincronizando... {{ syncProgress }}%</p>
+      </div>
+
+      <div *ngIf="isSynchronized" class="data-container">
+        <div class="success-message">
+          <p>Sensores sincronizados a Android/0/Device Sensors exitosamente</p>
+        </div>
+
+        <div class="sensor-data">
+          <div class="sensor-group">
+            <h2>Acelerómetro</h2>
+            <div class="sensor-values">
+              <div class="sensor-value">
+                <span class="label">X:</span>
+                <span class="value">{{ accelData.x }}</span>
+              </div>
+              <div class="sensor-value">
+                <span class="label">Y:</span>
+                <span class="value">{{ accelData.y }}</span>
+              </div>
+              <div class="sensor-value">
+                <span class="label">Z:</span>
+                <span class="value">{{ accelData.z }}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sensor-group">
+            <h2>Giroscopio</h2>
+            <div class="sensor-values">
+              <div class="sensor-value">
+                <span class="label">X:</span>
+                <span class="value">{{ gyroData.x }}</span>
+              </div>
+              <div class="sensor-value">
+                <span class="label">Y:</span>
+                <span class="value">{{ gyroData.y }}</span>
+              </div>
+              <div class="sensor-value">
+                <span class="label">Z:</span>
+                <span class="value">{{ gyroData.z }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="reset-button" (click)="resetSync()">Reiniciar</button>
+      </div>
+    </div>
+  </div>
+</div>
